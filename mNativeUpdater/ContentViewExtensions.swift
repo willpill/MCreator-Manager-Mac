@@ -42,56 +42,34 @@ To perform a full update, we'll need your password to mount and dismount install
     }
     
     func startUpdateProcess() {
-        getPasswordFromUser { password, downloadOnly in
-            if downloadOnly {
-                runDownloadOnlyScript()
+        getPasswordFromUser { password, isdownloadOnly in
+            if isdownloadOnly {
+                downloadOnly()
             } else if let password = password, !password.isEmpty {
-                runShellScript(with: password)
+                fullUpdate(with: password)
             }
         }
     }
     
-    func runDownloadOnlyScript() {
-        let script = """
-        #!/bin/zsh
+    func downloadOnly() {
+        guard let scriptPath = Bundle.main.path(forResource: "downloadOnly", ofType: "sh") else {
+            print("Error: Script not found in bundle.")
+            return
+        }
         
-        LOG_FILE="$HOME/Downloads/updater_log_$(date +%Y%m%d%H%M%S).log"
-        exec > >(tee "$LOG_FILE") 2>&1
-        
-        echo "Starting Download Only to ~/Downloads..."
-        
-        arch=$(uname -m)
-        if [ "$arch" = "x86_64" ]; then
-            dmg_arch="64bit"
-        else
-            dmg_arch="aarch64"
-        fi
-        
-        echo "Fetching the latest release information..."
-        release=$(curl -s https://api.github.com/repos/MCreator/MCreator/releases/latest)
-        
-        echo "Locating the download resource for $arch architecture..."
-        mcrUrl=$(echo "$release" | grep -o "https://[^']*Mac.$dmg_arch.dmg" | head -n 1)
-        mcrFile=$(basename "$mcrUrl")
-        
-        echo "Downloading $mcrFile..."
-        curl -L -o "$HOME/Downloads/$mcrFile" "$mcrUrl"
-        
-        echo "Done"
-        """
         let process = Process()
         let pipe = Pipe()
         
+        process.launchPath = "/bin/zsh"
+        process.arguments = [scriptPath]
         process.standardOutput = pipe
         process.standardError = pipe
-        process.launchPath = "/bin/zsh"
-        process.arguments = ["-c", script]
         
         let outHandle = pipe.fileHandleForReading
         outHandle.waitForDataInBackgroundAndNotify()
         
-        var obs1 : NSObjectProtocol!
-        obs1 = NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable, object: outHandle, queue: nil) { notification -> Void in
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable, object: outHandle, queue: nil) { notification -> Void in
             let data = outHandle.availableData
             if data.count > 0 {
                 if let str = String(data: data, encoding: .utf8) {
@@ -126,97 +104,29 @@ To perform a full update, we'll need your password to mount and dismount install
                 NotificationCenter.default.removeObserver(localObs2)
             }
         }
-
+        
         
         process.launch()
     }
     
-    func runShellScript(with password: String) {
-        let script = """
-        #!/bin/zsh
-        
-        LOG_FILE="$HOME/Downloads/updater_log_$(date +%Y%m%d%H%M%S).log"
-        exec > >(tee "$LOG_FILE") 2>&1
-        echo "Starting Update..."
-        
-        check_error() {
-            if [ $? -ne 0 ]; then
-                echo "An error occurred. Saved log file to $HOME/Downloads."
-                exit 1
-            fi
+    func fullUpdate(with password: String) {
+        guard let scriptPath = Bundle.main.path(forResource: "fullUpdate", ofType: "sh") else {
+            print("Error: Script not found in bundle.")
+            return
         }
-        
-        arch=$(uname -m)
-        if [ "$arch" = "x86_64" ]; then
-            dmg_arch="64bit"
-        else
-            dmg_arch="aarch64"
-        fi
-        
-        echo "Fetching the latest release information..."
-        release=$(curl -s https://api.github.com/repos/MCreator/MCreator/releases/latest)
-        check_error
-        
-        echo "Locating the download resource for $arch architecture..."
-        mcrUrl=$(echo "$release" | grep -o "https://[^']*Mac.$dmg_arch.dmg" | head -n 1)
-        mcrFile=$(basename "$mcrUrl")
-        
-        echo "Detaching previously mounted MCreator volumes..."
-        echo "\(password)" | sudo -S hdiutil detach /Volumes/MCreator*/
-        
-        echo "Downloading $mcrFile..."
-        curl -L -o "$HOME/Downloads/$mcrFile" "$mcrUrl"
-        check_error
-        
-        echo "Mounting the disk image..."
-        hdiutil attach "$HOME/Downloads/$mcrFile"
-        check_error
-        
-        echo "Moving the old version to the Trash..."
-        
-        # If the application already exists in the Trash
-        if [ -e ~/.Trash/MCreator.app ]; then
-            counter=1
-            # While a file/folder with that name exists in the Trash, increment counter
-            while [ -e ~/.Trash/MCreator-${counter}.app ]; do
-                counter=$((counter + 1))
-            done
-            echo "\(password)" | sudo -S mv /Applications/MCreator.app ~/.Trash/MCreator-${counter}.app
-        else
-            echo "\(password)" | sudo -S mv /Applications/MCreator.app ~/.Trash/
-        fi
-        check_error
-        
-        echo "Copying the new version to Applications folder..."
-        echo "\(password)" | sudo -S find /Volumes/MCreator*/ -name "*.app" -exec cp -R {} /Applications/ \\;
-        check_error
-        
-        echo "Detaching the mounted volume..."
-        echo "\(password)" | sudo -S hdiutil detach /Volumes/MCreator*/
-        check_error
-        
-        echo "Deleting the disk image..."
-        rm "$HOME/Downloads/$mcrFile"
-        check_error
-        
-        echo "Opening MCreator.app..."
-        open /Applications/MCreator.app
-        check_error
-        """
         
         let process = Process()
         let pipe = Pipe()
         
+        process.launchPath = "/bin/zsh"
+        process.arguments = [scriptPath, password]
         process.standardOutput = pipe
         process.standardError = pipe
-        process.launchPath = "/bin/zsh"
-        process.arguments = ["-c", script]
         
         let outHandle = pipe.fileHandleForReading
         outHandle.waitForDataInBackgroundAndNotify()
         
-        var obs1 : NSObjectProtocol!
-        obs1 = NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable, object: outHandle, queue: nil) { notification -> Void in
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable, object: outHandle, queue: nil) { notification -> Void in
             let data = outHandle.availableData
             if data.count > 0 {
                 if let str = String(data: data, encoding: .utf8) {

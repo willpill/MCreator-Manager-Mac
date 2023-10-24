@@ -17,7 +17,7 @@ struct mNativeUpdaterApp: App {
         WindowGroup {
             ContentView()
                 .frame(
-                  width: 880, height: 580)
+                    width: 880, height: 580)
                 .fixedSize()
                 .toolbar {
                     ToolbarItemGroup {

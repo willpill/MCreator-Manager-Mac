@@ -66,7 +66,7 @@ struct ContentView: View {
                         }
                     }
                 )
-
+                
                 if isUpdating && !updateComplete {
                     ProgressView(value: progressValue, total: 100)
                         .progressViewStyle(LinearProgressViewStyle(tint: Color.accentColor))
