@@ -15,6 +15,8 @@
 		303A855E2AE6A9E300412588 /* mNativeUpdaterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A855D2AE6A9E300412588 /* mNativeUpdaterUITests.swift */; };
 		303A85602AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A855F2AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift */; };
 		303A856D2AE6AA5700412588 /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A856C2AE6AA5700412588 /* BlurredView.swift */; };
+		30CDB1772AE86F8B0059A4D9 /* ContentViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */; };
+		30CDB1792AE87C040059A4D9 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		303A855D2AE6A9E300412588 /* mNativeUpdaterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNativeUpdaterUITests.swift; sourceTree = "<group>"; };
 		303A855F2AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNativeUpdaterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		303A856C2AE6AA5700412588 /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
+		30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewExtensions.swift; sourceTree = "<group>"; };
+		30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				303A85412AE6A9E200412588 /* mNativeUpdaterApp.swift */,
 				303A85432AE6A9E200412588 /* ContentView.swift */,
+				30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */,
+				30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */,
 				303A856C2AE6AA5700412588 /* BlurredView.swift */,
 				303A85452AE6A9E300412588 /* Assets.xcassets */,
 				303A854A2AE6A9E300412588 /* mNativeUpdater.entitlements */,
@@ -263,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				303A85442AE6A9E200412588 /* ContentView.swift in Sources */,
+				30CDB1792AE87C040059A4D9 /* NetworkCheck.swift in Sources */,
+				30CDB1772AE86F8B0059A4D9 /* ContentViewExtensions.swift in Sources */,
 				303A85422AE6A9E200412588 /* mNativeUpdaterApp.swift in Sources */,
 				303A856D2AE6AA5700412588 /* BlurredView.swift in Sources */,
 			);
@@ -428,7 +436,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"mNativeUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -459,7 +467,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"mNativeUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -487,7 +495,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 391;
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -506,7 +514,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 391;
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -524,7 +532,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 391;
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -541,7 +549,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 309;
+				CURRENT_PROJECT_VERSION = 391;
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
