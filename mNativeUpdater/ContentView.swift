@@ -54,6 +54,19 @@ struct ContentView: View {
                     RoundedRectangle(cornerRadius: 5)
                         .fill(Color(NSColor.systemGray).opacity(0.2))
                 )
+                .overlay(
+                    Group {
+                        if log.isEmpty {
+                            Text("􀧵 Logs will display here")
+                                .bold()
+                                .font(.largeTitle)
+                                .foregroundColor(.gray)
+                        } else {
+                            EmptyView()
+                        }
+                    }
+                )
+
 
                 
                 if isUpdating && !updateComplete {
