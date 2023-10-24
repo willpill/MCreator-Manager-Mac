@@ -120,10 +120,13 @@ To perform a full update, we'll need your password to mount and dismount install
             }
         }
         
-        var obs2 : NSObjectProtocol!
-        obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification, object: process, queue: nil) { [localObs2 = obs2] notification -> Void in
-            NotificationCenter.default.removeObserver(localObs2!)
+        var obs2: NSObjectProtocol?
+        obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification, object: process, queue: nil) { notification -> Void in
+            if let localObs2 = obs2 {
+                NotificationCenter.default.removeObserver(localObs2)
+            }
         }
+
         
         process.launch()
     }
@@ -255,9 +258,11 @@ To perform a full update, we'll need your password to mount and dismount install
             }
         }
         
-        var obs2 : NSObjectProtocol!
-        obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification, object: process, queue: nil) { [localObs2 = obs2] notification -> Void in
-            NotificationCenter.default.removeObserver(localObs2!)
+        var obs2: NSObjectProtocol?
+        obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification, object: process, queue: nil) { notification -> Void in
+            if let localObs2 = obs2 {
+                NotificationCenter.default.removeObserver(localObs2)
+            }
         }
         
         process.launch()
