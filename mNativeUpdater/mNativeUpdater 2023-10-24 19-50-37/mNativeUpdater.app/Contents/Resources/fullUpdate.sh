@@ -56,7 +56,7 @@ echo "$1" | sudo -S mv /Applications/MCreator.app ~/.Trash/MCreator-${counter}.a
 else
 echo "$1" | sudo -S mv /Applications/MCreator.app ~/.Trash/
 fi
-# Dont check error bc there might not be an existing MCreator
+check_error
 
 echo "Copying the new version to Applications folder..."
 echo "$1" | sudo -S find /Volumes/MCreator*/ -name "*.app" -exec cp -R {} /Applications/ \\;

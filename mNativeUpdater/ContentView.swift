@@ -29,7 +29,7 @@ struct ContentView: View {
                         Text("MCreator Updater")
                             .font(.title2)
                             .bold()
-                        Text("Version 1.3 by willpill. Not affiliated with Pylo.")
+                        Text("Version 1.4 by willpill. Not affiliated with Pylo.")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
