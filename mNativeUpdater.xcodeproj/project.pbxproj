@@ -15,10 +15,9 @@
 		303A855E2AE6A9E300412588 /* mNativeUpdaterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A855D2AE6A9E300412588 /* mNativeUpdaterUITests.swift */; };
 		303A85602AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A855F2AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift */; };
 		303A856D2AE6AA5700412588 /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A856C2AE6AA5700412588 /* BlurredView.swift */; };
+		305BD49A2AE9CD4D00C79F8A /* UpdateScripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */; };
 		30CDB1772AE86F8B0059A4D9 /* ContentViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */; };
 		30CDB1792AE87C040059A4D9 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */; };
-		30CDB17C2AE880250059A4D9 /* downloadOnly.sh in Resources */ = {isa = PBXBuildFile; fileRef = 30CDB17B2AE880250059A4D9 /* downloadOnly.sh */; };
-		30CDB17E2AE880360059A4D9 /* fullUpdate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 30CDB17D2AE880360059A4D9 /* fullUpdate.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +50,9 @@
 		303A855D2AE6A9E300412588 /* mNativeUpdaterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNativeUpdaterUITests.swift; sourceTree = "<group>"; };
 		303A855F2AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNativeUpdaterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		303A856C2AE6AA5700412588 /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
+		305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateScripts.swift; sourceTree = "<group>"; };
 		30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewExtensions.swift; sourceTree = "<group>"; };
 		30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
-		30CDB17B2AE880250059A4D9 /* downloadOnly.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = downloadOnly.sh; sourceTree = "<group>"; };
-		30CDB17D2AE880360059A4D9 /* fullUpdate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fullUpdate.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +83,6 @@
 		303A85352AE6A9E200412588 = {
 			isa = PBXGroup;
 			children = (
-				30CDB17A2AE880030059A4D9 /* Scripts */,
 				303A85402AE6A9E200412588 /* mNativeUpdater */,
 				303A85522AE6A9E300412588 /* mNativeUpdaterTests */,
 				303A855C2AE6A9E300412588 /* mNativeUpdaterUITests */,
@@ -111,6 +108,7 @@
 				30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */,
 				30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */,
 				303A856C2AE6AA5700412588 /* BlurredView.swift */,
+				305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */,
 				303A85452AE6A9E300412588 /* Assets.xcassets */,
 				303A854A2AE6A9E300412588 /* mNativeUpdater.entitlements */,
 				303A85472AE6A9E300412588 /* Preview Content */,
@@ -141,15 +139,6 @@
 				303A855F2AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift */,
 			);
 			path = mNativeUpdaterUITests;
-			sourceTree = "<group>";
-		};
-		30CDB17A2AE880030059A4D9 /* Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				30CDB17B2AE880250059A4D9 /* downloadOnly.sh */,
-				30CDB17D2AE880360059A4D9 /* fullUpdate.sh */,
-			);
-			path = Scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,10 +245,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30CDB17E2AE880360059A4D9 /* fullUpdate.sh in Resources */,
 				303A85492AE6A9E300412588 /* Preview Assets.xcassets in Resources */,
 				303A85462AE6A9E300412588 /* Assets.xcassets in Resources */,
-				30CDB17C2AE880250059A4D9 /* downloadOnly.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				303A85442AE6A9E200412588 /* ContentView.swift in Sources */,
+				305BD49A2AE9CD4D00C79F8A /* UpdateScripts.swift in Sources */,
 				30CDB1792AE87C040059A4D9 /* NetworkCheck.swift in Sources */,
 				30CDB1772AE86F8B0059A4D9 /* ContentViewExtensions.swift in Sources */,
 				303A85422AE6A9E200412588 /* mNativeUpdaterApp.swift in Sources */,
@@ -452,7 +440,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_ASSET_PATHS = "\"mNativeUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -465,7 +453,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mNativeUpdater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -483,7 +471,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_ASSET_PATHS = "\"mNativeUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -496,7 +484,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mNativeUpdater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -86,17 +86,15 @@ struct ContentView: View {
                         Text("Update Complete")
                             .frame(maxWidth: .infinity)
                     }
-                    .keyboardShortcut(.defaultAction)
                     .controlSize(.large)
                     .disabled(true)
                 } else if !isConnected {
                     Button(action: {}) {
-                        Text("No Connection")
+                        Text("􀙈 No Connection")
                             .frame(maxWidth: .infinity)
-                            .foregroundColor(.red)
                     }
-                    .disabled(true)
                     .controlSize(.large)
+                    .disabled(true)
                 }
             }
             .padding()

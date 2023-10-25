@@ -14,9 +14,15 @@ extension ContentView {
         DispatchQueue.main.async {
             let alert = NSAlert()
             alert.messageText = "Which kind of update would you like to perform?"
+            alert.informativeText =
+            """
+            You will be automatically updated to the newest release available from MCreator's official GitHub page.
+            
+            To perform a full update, we'll need your permission. Alternatively, you may choose to only download the new version's disk image.
+            """
             alert.alertStyle = .informational
-            alert.addButton(withTitle: "􀵔 Full Update")
-            alert.addButton(withTitle: "􀈄 Download Only")
+            alert.addButton(withTitle: "􀵔 Perform Full Update")
+            alert.addButton(withTitle: "􀈄 Download Disk Image Only")
             alert.addButton(withTitle: "Cancel")
             
             if let window = NSApplication.shared.mainWindow {
@@ -52,7 +58,8 @@ extension ContentView {
             alert.messageText = "We need your permission to update MCreator."
             alert.informativeText =
             """
-            To perform a full update, we'll need your password to mount and dismount installer disk images.
+            To perform a full update, we need your password to manage installer disk images.
+            We will be moving existing versions of MCreator to the trash.
             """
             alert.alertStyle = .informational
             let inputTextField = NSSecureTextField(frame: NSRect(x: 0, y: 0, width: 220, height: 24))
@@ -104,16 +111,13 @@ extension ContentView {
     }
     
     func downloadOnly() {
-        guard let scriptPath = Bundle.main.path(forResource: "downloadOnly", ofType: "sh") else {
-            print("Error: Script not found in bundle.")
-            return
-        }
+        let scriptContent = downloadOnlySH
         
         let process = Process()
         let pipe = Pipe()
         
         process.launchPath = "/bin/zsh"
-        process.arguments = [scriptPath]
+        process.arguments = ["-c", scriptContent]
         process.standardOutput = pipe
         process.standardError = pipe
         
@@ -162,16 +166,13 @@ extension ContentView {
     }
     
     func fullUpdate(with password: String) {
-        guard let scriptPath = Bundle.main.path(forResource: "fullUpdate", ofType: "sh") else {
-            print("Error: Script not found in bundle.")
-            return
-        }
+        let scriptContent = fullUpdateSH
         
         let process = Process()
         let pipe = Pipe()
         
         process.launchPath = "/bin/zsh"
-        process.arguments = [scriptPath, password]
+        process.arguments = ["-c", scriptContent, password]
         process.standardOutput = pipe
         process.standardError = pipe
         
