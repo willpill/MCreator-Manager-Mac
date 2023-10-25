@@ -32,8 +32,11 @@ echo "Locating the download resource for $arch architecture..."
 mcrUrl=$(echo "$release" | grep -o "https://[^']*Mac.$dmg_arch.dmg" | head -n 1)
 mcrFile=$(basename "$mcrUrl")
 
-echo "Detaching previously mounted MCreator volumes..."
-echo "$1" | sudo -S hdiutil detach /Volumes/MCreator*/
+# Detach existing MCreator volumes if they exist
+if mount | grep -q "/Volumes/MCreator"; then
+    echo "Detaching previously mounted MCreator volumes..."
+    echo "$1" | sudo -S hdiutil detach /Volumes/MCreator*/
+fi
 
 echo "Downloading $mcrFile..."
 curl -L -o "$HOME/Downloads/$mcrFile" "$mcrUrl"
@@ -44,22 +47,23 @@ hdiutil attach "$HOME/Downloads/$mcrFile"
 check_error
 
 echo "Moving the old version to the Trash..."
-
-# If the application already exists in the Trash
-if [ -e ~/.Trash/MCreator.app ]; then
-counter=1
-# While a file/folder with that name exists in the Trash, increment counter
-while [ -e ~/.Trash/MCreator-${counter}.app ]; do
-counter=$((counter + 1))
-done
-echo "$1" | sudo -S mv /Applications/MCreator.app ~/.Trash/MCreator-${counter}.app
+if [ -e /Applications/MCreator.app ]; then
+    if [ -e ~/.Trash/MCreator.app ]; then
+    counter=1
+    # While an mcreator exists in the Trash, increment counter
+    while [ -e ~/.Trash/MCreator-${counter}.app ]; do
+        counter=$((counter + 1))
+    done
+    echo "$1" | sudo -S mv /Applications/MCreator.app ~/.Trash/MCreator-${counter}.app
+    else
+    echo "$1" | sudo -S mv /Applications/MCreator.app ~/.Trash/
+    fi
 else
-echo "$1" | sudo -S mv /Applications/MCreator.app ~/.Trash/
+    echo "No existing app found in Applications. Very stange..."
 fi
-# Dont check error bc there might not be an existing MCreator
 
 echo "Copying the new version to Applications folder..."
-echo "$1" | sudo -S find /Volumes/MCreator*/ -name "*.app" -exec cp -R {} /Applications/ \\;
+echo "$1" | sudo -S find /Volumes/MCreator*/ -name "*.app" -exec cp -R {} /Applications/ \;
 check_error
 
 echo "Detaching the mounted volume..."

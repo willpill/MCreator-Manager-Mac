@@ -28,7 +28,7 @@ struct mNativeUpdaterApp: App {
                         }
                         .alert(isPresented: $showUserFilesConfirmation) {
                             Alert(title: Text("Reset all User Files?"),
-                                  message: Text("This will remove all plugins, backgrounds, templates, user preferences, logs, and recents list. This action cannot be undone."),
+                                  message: Text("This will remove all your plugins, backgrounds, templates, user preferences, logs, and the recents list. This action cannot be undone."),
                                   primaryButton: .destructive(Text("Reset"), action: resetUserFiles),
                                   secondaryButton: .cancel())
                         }
@@ -40,7 +40,7 @@ struct mNativeUpdaterApp: App {
                         }
                         .alert(isPresented: $showGradleFilesConfirmation) {
                             Alert(title: Text("Reset Gradle Files?"),
-                                  message: Text("This will reset Gradle files. This action cannot be undone."),
+                                  message: Text("This will reset your Gradle folder. Setup for projects will take longer."),
                                   primaryButton: .destructive(Text("Reset"), action: resetGradleFiles),
                                   secondaryButton: .cancel())
                         }
@@ -52,7 +52,7 @@ struct mNativeUpdaterApp: App {
                         }
                         .alert(isPresented: $showWorkspaceConfirmation) {
                             Alert(title: Text("Are you sure about this?"),
-                                  message: Text("This will delete all workspaces and cannot be undone."),
+                                  message: Text("This will delete all of your workspaces. This action cannot be undone."),
                                   primaryButton: .destructive(Text("Delete"), action: resetWorkspaces),
                                   secondaryButton: .cancel())
                         }
@@ -97,7 +97,7 @@ func deleteFiles(at paths: [String]) {
             do {
                 try fileManager.removeItem(atPath: expandedPath)
             } catch {
-                print("Error deleting \(path): \(error)")
+                print("Cant delete \(path): \(error)")
             }
         }
     }
