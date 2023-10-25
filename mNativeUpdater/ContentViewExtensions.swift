@@ -10,43 +10,95 @@ import AppKit
 
 extension ContentView {
     
-    func getPasswordFromUser(completion: @escaping (String?, Bool) -> Void) {
+    func getUserUpdateChoice(completion: @escaping (Bool?) -> Void) {
         DispatchQueue.main.async {
             let alert = NSAlert()
-            alert.messageText = "We need your permission to update MCreator."
-            alert.informativeText =
-"""
-This updater is intended to be used within a distribution of MCreator. Therefore, we will be moving existing versions of the app to the trash, instead of deleting them to prevent the updater from shutting down during the update. You will be automatically updated to the newest release avaialble from MCreator's official GitHub page.
-
-To perform a full update, we'll need your password to mount and dismount installer disk images. Alternatively, you may choose to only download the new version, which does not require your password.
-"""
-            
+            alert.messageText = "Which kind of update would you like to perform?"
             alert.alertStyle = .informational
             alert.addButton(withTitle: "􀵔 Full Update")
             alert.addButton(withTitle: "􀈄 Download Only")
             alert.addButton(withTitle: "Cancel")
             
-            let inputTextField = NSSecureTextField(frame: NSRect(x: 0, y: 0, width: 253, height: 24))
-            inputTextField.placeholderString = "Enter Password for Full Update"
-            alert.accessoryView = inputTextField
-            
-            let response = alert.runModal()
-            if response == .alertFirstButtonReturn {
-                completion(inputTextField.stringValue, false)
-            } else if response == .alertSecondButtonReturn {
-                completion(nil, true)
+            if let window = NSApplication.shared.mainWindow {
+                alert.beginSheetModal(for: window) { response in
+                    switch response {
+                    case .alertFirstButtonReturn:
+                        completion(true)
+                    case .alertSecondButtonReturn:
+                        completion(false)
+                    default:
+                        self.isUpdating = false
+                        completion(nil)
+                    }
+                }
             } else {
-                completion(nil, false)
+                let response = alert.runModal()
+                switch response {
+                case .alertFirstButtonReturn:
+                    completion(true)
+                case .alertSecondButtonReturn:
+                    completion(false)
+                default:
+                    self.isUpdating = false
+                    completion(nil)
+                }
             }
         }
     }
     
+    func getPasswordFromUser(completion: @escaping (String?) -> Void) {
+        DispatchQueue.main.async {
+            let alert = NSAlert()
+            alert.messageText = "We need your permission to update MCreator."
+            alert.informativeText =
+            """
+            To perform a full update, we'll need your password to mount and dismount installer disk images.
+            """
+            alert.alertStyle = .informational
+            let inputTextField = NSSecureTextField(frame: NSRect(x: 0, y: 0, width: 220, height: 24))
+            inputTextField.placeholderString = "Enter Password"
+            alert.accessoryView = inputTextField
+            alert.addButton(withTitle: "Proceed")
+            alert.addButton(withTitle: "Cancel")
+            
+            if let window = NSApplication.shared.mainWindow {
+                alert.beginSheetModal(for: window) { response in
+                    switch response {
+                    case .alertFirstButtonReturn:
+                        completion(inputTextField.stringValue)
+                    default:
+                        self.isUpdating = false
+                        completion(nil)
+                    }
+                }
+            } else {
+                let response = alert.runModal()
+                switch response {
+                case .alertFirstButtonReturn:
+                    completion(inputTextField.stringValue)
+                default:
+                    self.isUpdating = false
+                    completion(nil)
+                }
+            }
+        }
+    }
+    
+    
     func startUpdateProcess() {
-        getPasswordFromUser { password, isdownloadOnly in
-            if isdownloadOnly {
+        getUserUpdateChoice { updateChoice in
+            switch updateChoice {
+            case true:
+                getPasswordFromUser { password in
+                    if let password = password, !password.isEmpty {
+                        fullUpdate(with: password)
+                    }
+                }
+            case false:
                 downloadOnly()
-            } else if let password = password, !password.isEmpty {
-                fullUpdate(with: password)
+            default:
+                // User canceled or closed the alert, no action needed
+                break
             }
         }
     }
