@@ -8,9 +8,6 @@
 var downloadOnlySH: String = """
 #!/bin/zsh
 
-LOG_FILE="$HOME/Downloads/updater_log_$(date +%Y%m%d%H%M%S).log"
-exec > >(tee "$LOG_FILE") 2>&1
-
 echo "Starting Download Only to ~/Downloads..."
 
 arch=$(uname -m)
@@ -36,9 +33,6 @@ echo "Finishing Up"
 
 var downloadOnlySHSnap: String = """
 #!/bin/zsh
-
-LOG_FILE="$HOME/Downloads/updater_log_$(date +%Y%m%d%H%M%S).log"
-exec > >(tee "$LOG_FILE") 2>&1
 
 echo "Starting Download Only to ~/Downloads... (SNAPSHOT)"
 
@@ -72,13 +66,11 @@ echo "Finishing Up"
 
 var fullUpdateSH: String = """
 #!/bin/zsh
-LOG_FILE="$HOME/Downloads/updater_log_$(date +%Y%m%d%H%M%S).log"
-exec > >(tee "$LOG_FILE") 2>&1
 echo "Starting Update..."
 
 check_error() {
     if [ $? -ne 0 ]; then
-    echo "An error occurred. Saved log file to $HOME/Downloads."
+    echo "An error occurred."
     exit 1
     fi
 }
@@ -148,13 +140,11 @@ check_error
 
 var fullUpdateSHSnap: String = """
 #!/bin/zsh
-LOG_FILE="$HOME/Downloads/updater_log_$(date +%Y%m%d%H%M%S).log"
-exec > >(tee "$LOG_FILE") 2>&1
 echo "Starting Update... (SNAPSHOT)"
 
 check_error() {
     if [ $? -ne 0 ]; then
-    echo "An error occurred. Saved log file to $HOME/Downloads."
+    echo "An error occurred."
     exit 1
     fi
 }

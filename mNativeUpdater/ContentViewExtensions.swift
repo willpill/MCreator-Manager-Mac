@@ -139,13 +139,27 @@ extension ContentView {
                         case let s where s.contains("Fetching the latest"): self.progressValue = 5.0
                         case let s where s.contains("Locating the download resource for"): self.progressValue = 10.0
                         case let s where s.contains("Finishing Up"):
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 self.isUpdating = false
                                 self.updateComplete = true
                             }
-                        case let s where s.contains("No prereleases"):
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                        case let s where s.contains("No prereleases") || s.contains("An error occurred") || s.contains("Sorry, try again"):
+                            process.terminate()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 self.isUpdating = false
+                                
+                                // Show the error alert
+                                let errorAlert = NSAlert()
+                                errorAlert.messageText = "We ran into an error. Refer to the logs for more information."
+                                errorAlert.informativeText = "Check that you've entered the correct password, and have the necessary permissions."
+                                errorAlert.alertStyle = .critical
+                                errorAlert.addButton(withTitle: "OK")
+                                
+                                if let window = NSApplication.shared.mainWindow {
+                                    errorAlert.beginSheetModal(for: window, completionHandler: nil)
+                                } else {
+                                    errorAlert.runModal()
+                                }
                             }
                         default:
                             if let range = str.range(of: "\\b\\d{1,3}\\b", options: .regularExpression),
@@ -161,10 +175,16 @@ extension ContentView {
             }
         }
         
+        let obsQueue = DispatchQueue(label: "downloadOnlyQueue")
         var obs2: NSObjectProtocol?
-        obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification, object: process, queue: nil) { notification -> Void in
-            if let localObs2 = obs2 {
-                NotificationCenter.default.removeObserver(localObs2)
+        
+        obsQueue.async {
+            obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification, object: process, queue: nil) { notification -> Void in
+                obsQueue.async {
+                    if let localObs2 = obs2 {
+                        NotificationCenter.default.removeObserver(localObs2)
+                    }
+                }
             }
         }
         
@@ -209,13 +229,26 @@ extension ContentView {
                         case let s where s.contains("Detaching the mounted volume"): self.progressValue = 90.0
                         case let s where s.contains("Deleting the disk image"):
                             self.progressValue = 100.0
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 self.isUpdating = false
                                 self.updateComplete = true
                             }
-                        case let s where s.contains("No prereleases"):
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                        case let s where s.contains("No prereleases") || s.contains("An error occurred") || s.contains("Sorry, try again"):
+                            process.terminate()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 self.isUpdating = false
+                                
+                                let errorAlert = NSAlert()
+                                errorAlert.messageText = "We ran into an error. Refer to the logs for more information."
+                                errorAlert.informativeText = "Check that you've entered the correct password, and have the necessary permissions."
+                                errorAlert.alertStyle = .critical
+                                errorAlert.addButton(withTitle: "OK")
+                                
+                                if let window = NSApplication.shared.mainWindow {
+                                    errorAlert.beginSheetModal(for: window, completionHandler: nil)
+                                } else {
+                                    errorAlert.runModal()
+                                }
                             }
                         default:
                             // no progress for logs with checksumming
@@ -237,10 +270,16 @@ extension ContentView {
             }
         }
         
+        let obsQueue = DispatchQueue(label: "fullUpdateQueue")
         var obs2: NSObjectProtocol?
-        obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification, object: process, queue: nil) { notification -> Void in
-            if let localObs2 = obs2 {
-                NotificationCenter.default.removeObserver(localObs2)
+        
+        obsQueue.async {
+            obs2 = NotificationCenter.default.addObserver(forName: Process.didTerminateNotification, object: process, queue: nil) { notification -> Void in
+                obsQueue.async {
+                    if let localObs2 = obs2 {
+                        NotificationCenter.default.removeObserver(localObs2)
+                    }
+                }
             }
         }
         
