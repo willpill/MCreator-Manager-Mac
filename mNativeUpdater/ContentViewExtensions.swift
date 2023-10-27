@@ -33,7 +33,6 @@ extension ContentView {
                     case .alertSecondButtonReturn:
                         completion(false)
                     default:
-                        self.isUpdating = false
                         completion(nil)
                     }
                 }
@@ -45,7 +44,6 @@ extension ContentView {
                 case .alertSecondButtonReturn:
                     completion(false)
                 default:
-                    self.isUpdating = false
                     completion(nil)
                 }
             }
@@ -74,7 +72,6 @@ extension ContentView {
                     case .alertFirstButtonReturn:
                         completion(inputTextField.stringValue)
                     default:
-                        self.isUpdating = false
                         completion(nil)
                     }
                 }
@@ -84,7 +81,6 @@ extension ContentView {
                 case .alertFirstButtonReturn:
                     completion(inputTextField.stringValue)
                 default:
-                    self.isUpdating = false
                     completion(nil)
                 }
             }
@@ -98,20 +94,26 @@ extension ContentView {
             case true:
                 getPasswordFromUser { password in
                     if let password = password, !password.isEmpty {
+                        isUpdating = true
                         fullUpdate(with: password)
                     }
                 }
             case false:
+                isUpdating = true
                 downloadOnly()
             default:
-                // User canceled or closed the alert, no action needed
                 break
             }
         }
     }
     
     func downloadOnly() {
-        let scriptContent = downloadOnlySH
+        var scriptContent: String
+        if viewModel.selectedTab == .snapshot {
+            scriptContent = downloadOnlySHSnap
+        } else {
+            scriptContent = downloadOnlySH
+        }
         
         let process = Process()
         let pipe = Pipe()
@@ -133,12 +135,16 @@ extension ContentView {
                         self.log += str
                         
                         switch str {
-                        case let s where s.contains("Fetching the latest release information"): self.progressValue = 5.0
+                        case let s where s.contains("Fetching the latest"): self.progressValue = 5.0
                         case let s where s.contains("Locating the download resource for"): self.progressValue = 10.0
-                        case let s where s.contains("Done"):
+                        case let s where s.contains("Finishing Up"):
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                                 self.isUpdating = false
                                 self.updateComplete = true
+                            }
+                        case let s where s.contains("No prereleases"):
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                                self.isUpdating = false
                             }
                         default:
                             if let range = str.range(of: "\\b\\d{1,3}\\b", options: .regularExpression),
@@ -166,7 +172,12 @@ extension ContentView {
     }
     
     func fullUpdate(with password: String) {
-        let scriptContent = fullUpdateSH
+        var scriptContent: String
+        if viewModel.selectedTab == .snapshot {
+            scriptContent = fullUpdateSHSnap
+        } else {
+            scriptContent = fullUpdateSH
+        }
         
         let process = Process()
         let pipe = Pipe()
@@ -187,7 +198,7 @@ extension ContentView {
                         self.log += str
                         
                         switch str {
-                        case let s where s.contains("Fetching the latest release information"): self.progressValue = 5.0
+                        case let s where s.contains("Fetching the latest"): self.progressValue = 5.0
                         case let s where s.contains("Locating the download resource for"): self.progressValue = 10.0
                         case let s where s.contains("Detaching previously mounted MCreator volumes"): self.progressValue = 15.0
                         case let s where s.contains("Mounting the disk image"): self.progressValue = 75.0
@@ -200,6 +211,10 @@ extension ContentView {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                                 self.isUpdating = false
                                 self.updateComplete = true
+                            }
+                        case let s where s.contains("No prereleases"):
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                                self.isUpdating = false
                             }
                         default:
                             // no progress for logs with checksumming

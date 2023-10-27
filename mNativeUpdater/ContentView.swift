@@ -10,6 +10,7 @@ import AppKit
 import Network
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: UpdaterViewModel
     @State var log: String = ""
     @State var progressValue: Double = 0.0
     @State var isUpdating: Bool = false
@@ -29,7 +30,7 @@ struct ContentView: View {
                         Text("MCreator Updater")
                             .font(.title2)
                             .bold()
-                        Text("Version 1.4 by willpill. Not affiliated with Pylo.")
+                        Text("Version 1.5 by willpill. Not affiliated with Pylo.")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
@@ -57,10 +58,16 @@ struct ContentView: View {
                 .overlay(
                     Group {
                         if log.isEmpty {
-                            Text("􀧵 Logs will display here")
-                                .bold()
-                                .font(.largeTitle)
-                                .foregroundColor(.gray)
+                            HStack {
+                                Image(systemName: "chart.bar.doc.horizontal")
+                                    .symbolEffect(.variableColor)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.gray)
+                                Text("Logs will display here")
+                                    .font(.largeTitle)
+                                    .foregroundColor(.gray)
+                                    .bold()
+                            }
                         } else {
                             EmptyView()
                         }
@@ -73,7 +80,6 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity, minHeight: 28)
                 } else if !isUpdating && !updateComplete && isConnected {
                     Button(action: {
-                        isUpdating = true
                         startUpdateProcess()
                     }) {
                         Text("􀄨 Start Update")

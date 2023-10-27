@@ -15,6 +15,7 @@
 		303A855E2AE6A9E300412588 /* mNativeUpdaterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A855D2AE6A9E300412588 /* mNativeUpdaterUITests.swift */; };
 		303A85602AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A855F2AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift */; };
 		303A856D2AE6AA5700412588 /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A856C2AE6AA5700412588 /* BlurredView.swift */; };
+		305050792AEB3996009FD112 /* UpdaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305050782AEB3996009FD112 /* UpdaterViewModel.swift */; };
 		305BD49A2AE9CD4D00C79F8A /* UpdateScripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */; };
 		30CDB1772AE86F8B0059A4D9 /* ContentViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */; };
 		30CDB1792AE87C040059A4D9 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */; };
@@ -50,6 +51,7 @@
 		303A855D2AE6A9E300412588 /* mNativeUpdaterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNativeUpdaterUITests.swift; sourceTree = "<group>"; };
 		303A855F2AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNativeUpdaterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		303A856C2AE6AA5700412588 /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
+		305050782AEB3996009FD112 /* UpdaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterViewModel.swift; sourceTree = "<group>"; };
 		305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateScripts.swift; sourceTree = "<group>"; };
 		30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewExtensions.swift; sourceTree = "<group>"; };
 		30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */,
 				303A856C2AE6AA5700412588 /* BlurredView.swift */,
 				305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */,
+				305050782AEB3996009FD112 /* UpdaterViewModel.swift */,
 				303A85452AE6A9E300412588 /* Assets.xcassets */,
 				303A854A2AE6A9E300412588 /* mNativeUpdater.entitlements */,
 				303A85472AE6A9E300412588 /* Preview Content */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				303A85442AE6A9E200412588 /* ContentView.swift in Sources */,
+				305050792AEB3996009FD112 /* UpdaterViewModel.swift in Sources */,
 				305BD49A2AE9CD4D00C79F8A /* UpdateScripts.swift in Sources */,
 				30CDB1792AE87C040059A4D9 /* NetworkCheck.swift in Sources */,
 				30CDB1772AE86F8B0059A4D9 /* ContentViewExtensions.swift in Sources */,
@@ -440,7 +444,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 51;
 				DEVELOPMENT_ASSET_PATHS = "\"mNativeUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -453,7 +457,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mNativeUpdater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -471,7 +475,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 51;
 				DEVELOPMENT_ASSET_PATHS = "\"mNativeUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -484,7 +488,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.4.3;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mNativeUpdater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

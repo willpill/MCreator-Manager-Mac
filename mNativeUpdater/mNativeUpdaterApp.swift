@@ -10,17 +10,26 @@ import Foundation
 
 @main
 struct mNativeUpdaterApp: App {
+    @StateObject var viewModel = UpdaterViewModel()
     @State private var showUserFilesConfirmation = false
     @State private var showGradleFilesConfirmation = false
     @State private var showWorkspaceConfirmation = false
-
+    @State private var selectedTab: UpdateType = .release
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
                 .frame(width: 880, height: 580)
                 .fixedSize()
                 .toolbar {
                     ToolbarItemGroup {
+                        
+                        Picker("Update Type", selection: $viewModel.selectedTab) {
+                            Text("􁙌 Latest Release").tag(UpdateType.release)
+                            Text("􁂶 Latest Snapshot").tag(UpdateType.snapshot)
+                        }
+                        
                         Button(action: {
                             showUserFilesConfirmation.toggle()
                         }) {
@@ -32,7 +41,7 @@ struct mNativeUpdaterApp: App {
                                   primaryButton: .destructive(Text("Reset"), action: resetUserFiles),
                                   secondaryButton: .cancel())
                         }
-
+                        
                         Button(action: {
                             showGradleFilesConfirmation.toggle()
                         }) {
@@ -44,7 +53,7 @@ struct mNativeUpdaterApp: App {
                                   primaryButton: .destructive(Text("Reset"), action: resetGradleFiles),
                                   secondaryButton: .cancel())
                         }
-
+                        
                         Button(action: {
                             showWorkspaceConfirmation.toggle()
                         }) {
@@ -62,6 +71,10 @@ struct mNativeUpdaterApp: App {
         .windowStyle(HiddenTitleBarWindowStyle())
         .windowResizability(.contentSize)
     }
+}
+
+enum UpdateType {
+    case snapshot, release
 }
 
 func resetUserFiles() {
