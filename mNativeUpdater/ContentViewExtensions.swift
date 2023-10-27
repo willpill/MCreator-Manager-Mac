@@ -57,6 +57,7 @@ extension ContentView {
             alert.informativeText =
             """
             To perform a full update, we need your password to manage installer disk images.
+            
             We will be moving existing versions of MCreator to the trash.
             """
             alert.alertStyle = .informational

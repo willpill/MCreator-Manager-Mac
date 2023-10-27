@@ -40,7 +40,7 @@ var downloadOnlySHSnap: String = """
 LOG_FILE="$HOME/Downloads/updater_log_$(date +%Y%m%d%H%M%S).log"
 exec > >(tee "$LOG_FILE") 2>&1
 
-echo "SN Starting Download Only to ~/Downloads..."
+echo "Starting Download Only to ~/Downloads... (SNAPSHOT)"
 
 arch=$(uname -m)
 if [ "$arch" = "x86_64" ]; then
@@ -150,7 +150,7 @@ var fullUpdateSHSnap: String = """
 #!/bin/zsh
 LOG_FILE="$HOME/Downloads/updater_log_$(date +%Y%m%d%H%M%S).log"
 exec > >(tee "$LOG_FILE") 2>&1
-echo "Starting Update..."
+echo "Starting Update... (SNAPSHOT)"
 
 check_error() {
     if [ $? -ne 0 ]; then
@@ -176,7 +176,7 @@ if [ -z "$prerelease" ]; then
 fi
 
 echo "Locating the download resource for $arch architecture..."
-mcrUrl=$(echo "$release" | grep -o "https://[^']*Mac.$dmg_arch.dmg" | head -n 1)
+mcrUrl=$(echo "$releases" | grep -o "https://[^']*Mac.$dmg_arch.dmg" | head -n 1)
 mcrFile=$(basename "$mcrUrl")
 
 # Detach existing MCreator volumes if they exist
