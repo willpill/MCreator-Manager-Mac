@@ -19,6 +19,12 @@
 		305BD49A2AE9CD4D00C79F8A /* UpdateScripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */; };
 		30CDB1772AE86F8B0059A4D9 /* ContentViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */; };
 		30CDB1792AE87C040059A4D9 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */; };
+		30E88C432AECA4DB00278D94 /* mUpdaterMenuBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E88C422AECA4DB00278D94 /* mUpdaterMenuBarApp.swift */; };
+		30E88C472AECA4DC00278D94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30E88C462AECA4DC00278D94 /* Assets.xcassets */; };
+		30E88C4A2AECA4DC00278D94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30E88C492AECA4DC00278D94 /* Preview Assets.xcassets */; };
+		30E88C552AECA4DC00278D94 /* mUpdaterMenuBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E88C542AECA4DC00278D94 /* mUpdaterMenuBarTests.swift */; };
+		30E88C5F2AECA4DC00278D94 /* mUpdaterMenuBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E88C5E2AECA4DC00278D94 /* mUpdaterMenuBarUITests.swift */; };
+		30E88C612AECA4DC00278D94 /* mUpdaterMenuBarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E88C602AECA4DC00278D94 /* mUpdaterMenuBarUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 303A853D2AE6A9E200412588;
 			remoteInfo = mNativeUpdater;
+		};
+		30E88C512AECA4DC00278D94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 303A85362AE6A9E200412588 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30E88C3F2AECA4DB00278D94;
+			remoteInfo = mUpdaterMenuBar;
+		};
+		30E88C5B2AECA4DC00278D94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 303A85362AE6A9E200412588 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30E88C3F2AECA4DB00278D94;
+			remoteInfo = mUpdaterMenuBar;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,6 +75,16 @@
 		305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateScripts.swift; sourceTree = "<group>"; };
 		30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewExtensions.swift; sourceTree = "<group>"; };
 		30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
+		30E88C402AECA4DB00278D94 /* mUpdaterMenuBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mUpdaterMenuBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30E88C422AECA4DB00278D94 /* mUpdaterMenuBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mUpdaterMenuBarApp.swift; sourceTree = "<group>"; };
+		30E88C462AECA4DC00278D94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30E88C492AECA4DC00278D94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		30E88C4B2AECA4DC00278D94 /* mUpdaterMenuBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mUpdaterMenuBar.entitlements; sourceTree = "<group>"; };
+		30E88C502AECA4DC00278D94 /* mUpdaterMenuBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mUpdaterMenuBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30E88C542AECA4DC00278D94 /* mUpdaterMenuBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mUpdaterMenuBarTests.swift; sourceTree = "<group>"; };
+		30E88C5A2AECA4DC00278D94 /* mUpdaterMenuBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mUpdaterMenuBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30E88C5E2AECA4DC00278D94 /* mUpdaterMenuBarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mUpdaterMenuBarUITests.swift; sourceTree = "<group>"; };
+		30E88C602AECA4DC00278D94 /* mUpdaterMenuBarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mUpdaterMenuBarUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +109,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30E88C3D2AECA4DB00278D94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30E88C4D2AECA4DC00278D94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30E88C572AECA4DC00278D94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -88,6 +139,9 @@
 				303A85402AE6A9E200412588 /* mUpdater */,
 				303A85522AE6A9E300412588 /* mUpdaterTests */,
 				303A855C2AE6A9E300412588 /* mUpdaterUITests */,
+				30E88C412AECA4DB00278D94 /* mUpdaterMenuBar */,
+				30E88C532AECA4DC00278D94 /* mUpdaterMenuBarTests */,
+				30E88C5D2AECA4DC00278D94 /* mUpdaterMenuBarUITests */,
 				303A853F2AE6A9E200412588 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +152,9 @@
 				303A853E2AE6A9E200412588 /* mUpdater.app */,
 				303A854F2AE6A9E300412588 /* mUpdaterTests.xctest */,
 				303A85592AE6A9E300412588 /* mUpdaterUITests.xctest */,
+				30E88C402AECA4DB00278D94 /* mUpdaterMenuBar.app */,
+				30E88C502AECA4DC00278D94 /* mUpdaterMenuBarTests.xctest */,
+				30E88C5A2AECA4DC00278D94 /* mUpdaterMenuBarUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,6 +199,42 @@
 				303A855F2AE6A9E300412588 /* mUpdaterUITestsLaunchTests.swift */,
 			);
 			path = mUpdaterUITests;
+			sourceTree = "<group>";
+		};
+		30E88C412AECA4DB00278D94 /* mUpdaterMenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				30E88C422AECA4DB00278D94 /* mUpdaterMenuBarApp.swift */,
+				30E88C462AECA4DC00278D94 /* Assets.xcassets */,
+				30E88C4B2AECA4DC00278D94 /* mUpdaterMenuBar.entitlements */,
+				30E88C482AECA4DC00278D94 /* Preview Content */,
+			);
+			path = mUpdaterMenuBar;
+			sourceTree = "<group>";
+		};
+		30E88C482AECA4DC00278D94 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				30E88C492AECA4DC00278D94 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		30E88C532AECA4DC00278D94 /* mUpdaterMenuBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				30E88C542AECA4DC00278D94 /* mUpdaterMenuBarTests.swift */,
+			);
+			path = mUpdaterMenuBarTests;
+			sourceTree = "<group>";
+		};
+		30E88C5D2AECA4DC00278D94 /* mUpdaterMenuBarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				30E88C5E2AECA4DC00278D94 /* mUpdaterMenuBarUITests.swift */,
+				30E88C602AECA4DC00278D94 /* mUpdaterMenuBarUITestsLaunchTests.swift */,
+			);
+			path = mUpdaterMenuBarUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +293,59 @@
 			productReference = 303A85592AE6A9E300412588 /* mUpdaterUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		30E88C3F2AECA4DB00278D94 /* mUpdaterMenuBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30E88C622AECA4DC00278D94 /* Build configuration list for PBXNativeTarget "mUpdaterMenuBar" */;
+			buildPhases = (
+				30E88C3C2AECA4DB00278D94 /* Sources */,
+				30E88C3D2AECA4DB00278D94 /* Frameworks */,
+				30E88C3E2AECA4DB00278D94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mUpdaterMenuBar;
+			productName = mUpdaterMenuBar;
+			productReference = 30E88C402AECA4DB00278D94 /* mUpdaterMenuBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		30E88C4F2AECA4DC00278D94 /* mUpdaterMenuBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30E88C652AECA4DC00278D94 /* Build configuration list for PBXNativeTarget "mUpdaterMenuBarTests" */;
+			buildPhases = (
+				30E88C4C2AECA4DC00278D94 /* Sources */,
+				30E88C4D2AECA4DC00278D94 /* Frameworks */,
+				30E88C4E2AECA4DC00278D94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30E88C522AECA4DC00278D94 /* PBXTargetDependency */,
+			);
+			name = mUpdaterMenuBarTests;
+			productName = mUpdaterMenuBarTests;
+			productReference = 30E88C502AECA4DC00278D94 /* mUpdaterMenuBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		30E88C592AECA4DC00278D94 /* mUpdaterMenuBarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30E88C682AECA4DC00278D94 /* Build configuration list for PBXNativeTarget "mUpdaterMenuBarUITests" */;
+			buildPhases = (
+				30E88C562AECA4DC00278D94 /* Sources */,
+				30E88C572AECA4DC00278D94 /* Frameworks */,
+				30E88C582AECA4DC00278D94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30E88C5C2AECA4DC00278D94 /* PBXTargetDependency */,
+			);
+			name = mUpdaterMenuBarUITests;
+			productName = mUpdaterMenuBarUITests;
+			productReference = 30E88C5A2AECA4DC00278D94 /* mUpdaterMenuBarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -221,6 +367,17 @@
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = 303A853D2AE6A9E200412588;
 					};
+					30E88C3F2AECA4DB00278D94 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					30E88C4F2AECA4DC00278D94 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 30E88C3F2AECA4DB00278D94;
+					};
+					30E88C592AECA4DC00278D94 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 30E88C3F2AECA4DB00278D94;
+					};
 				};
 			};
 			buildConfigurationList = 303A85392AE6A9E200412588 /* Build configuration list for PBXProject "mUpdater" */;
@@ -239,6 +396,9 @@
 				303A853D2AE6A9E200412588 /* mUpdater */,
 				303A854E2AE6A9E300412588 /* mUpdaterTests */,
 				303A85582AE6A9E300412588 /* mUpdaterUITests */,
+				30E88C3F2AECA4DB00278D94 /* mUpdaterMenuBar */,
+				30E88C4F2AECA4DC00278D94 /* mUpdaterMenuBarTests */,
+				30E88C592AECA4DC00278D94 /* mUpdaterMenuBarUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -261,6 +421,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		303A85572AE6A9E300412588 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30E88C3E2AECA4DB00278D94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30E88C4A2AECA4DC00278D94 /* Preview Assets.xcassets in Resources */,
+				30E88C472AECA4DC00278D94 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30E88C4E2AECA4DC00278D94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30E88C582AECA4DC00278D94 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -301,6 +484,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30E88C3C2AECA4DB00278D94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30E88C432AECA4DB00278D94 /* mUpdaterMenuBarApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30E88C4C2AECA4DC00278D94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30E88C552AECA4DC00278D94 /* mUpdaterMenuBarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30E88C562AECA4DC00278D94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30E88C5F2AECA4DC00278D94 /* mUpdaterMenuBarUITests.swift in Sources */,
+				30E88C612AECA4DC00278D94 /* mUpdaterMenuBarUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -313,6 +521,16 @@
 			isa = PBXTargetDependency;
 			target = 303A853D2AE6A9E200412588 /* mUpdater */;
 			targetProxy = 303A855A2AE6A9E300412588 /* PBXContainerItemProxy */;
+		};
+		30E88C522AECA4DC00278D94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30E88C3F2AECA4DB00278D94 /* mUpdaterMenuBar */;
+			targetProxy = 30E88C512AECA4DC00278D94 /* PBXContainerItemProxy */;
+		};
+		30E88C5C2AECA4DC00278D94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30E88C3F2AECA4DB00278D94 /* mUpdaterMenuBar */;
+			targetProxy = 30E88C5B2AECA4DC00278D94 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -444,7 +662,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 84;
 				DEVELOPMENT_ASSET_PATHS = "\"mUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -457,7 +675,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -475,7 +693,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 84;
 				DEVELOPMENT_ASSET_PATHS = "\"mUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -488,7 +706,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.5.2;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -508,11 +726,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mNativeUpdaterTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdaterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mNativeUpdater.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mNativeUpdater";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mUpdater.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mUpdater";
 			};
 			name = Debug;
 		};
@@ -527,11 +745,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mNativeUpdaterTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdaterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mNativeUpdater.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mNativeUpdater";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mUpdater.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mUpdater";
 			};
 			name = Release;
 		};
@@ -544,11 +762,11 @@
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mNativeUpdaterUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdaterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = mNativeUpdater;
+				TEST_TARGET_NAME = mUpdater;
 			};
 			name = Debug;
 		};
@@ -561,11 +779,139 @@
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mNativeUpdaterUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdaterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = mNativeUpdater;
+				TEST_TARGET_NAME = mUpdater;
+			};
+			name = Release;
+		};
+		30E88C632AECA4DC00278D94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = mUpdaterMenuBar/mUpdaterMenuBar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"mUpdaterMenuBar/Preview Content\"";
+				DEVELOPMENT_TEAM = AKMDV26QQ4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdaterMenuBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		30E88C642AECA4DC00278D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = mUpdaterMenuBar/mUpdaterMenuBar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"mUpdaterMenuBar/Preview Content\"";
+				DEVELOPMENT_TEAM = AKMDV26QQ4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdaterMenuBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		30E88C662AECA4DC00278D94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AKMDV26QQ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdaterMenuBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mUpdaterMenuBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mUpdaterMenuBar";
+			};
+			name = Debug;
+		};
+		30E88C672AECA4DC00278D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AKMDV26QQ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdaterMenuBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mUpdaterMenuBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mUpdaterMenuBar";
+			};
+			name = Release;
+		};
+		30E88C692AECA4DC00278D94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AKMDV26QQ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdaterMenuBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = mUpdaterMenuBar;
+			};
+			name = Debug;
+		};
+		30E88C6A2AECA4DC00278D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AKMDV26QQ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdaterMenuBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = mUpdaterMenuBar;
 			};
 			name = Release;
 		};
@@ -604,6 +950,33 @@
 			buildConfigurations = (
 				303A856A2AE6A9E300412588 /* Debug */,
 				303A856B2AE6A9E300412588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30E88C622AECA4DC00278D94 /* Build configuration list for PBXNativeTarget "mUpdaterMenuBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30E88C632AECA4DC00278D94 /* Debug */,
+				30E88C642AECA4DC00278D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30E88C652AECA4DC00278D94 /* Build configuration list for PBXNativeTarget "mUpdaterMenuBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30E88C662AECA4DC00278D94 /* Debug */,
+				30E88C672AECA4DC00278D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30E88C682AECA4DC00278D94 /* Build configuration list for PBXNativeTarget "mUpdaterMenuBarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30E88C692AECA4DC00278D94 /* Debug */,
+				30E88C6A2AECA4DC00278D94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
