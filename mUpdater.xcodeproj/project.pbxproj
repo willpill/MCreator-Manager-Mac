@@ -165,9 +165,9 @@
 				303A85412AE6A9E200412588 /* mUpdaterApp.swift */,
 				303A85432AE6A9E200412588 /* ContentView.swift */,
 				30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */,
+				305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */,
 				30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */,
 				303A856C2AE6AA5700412588 /* BlurredView.swift */,
-				305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */,
 				305050782AEB3996009FD112 /* UpdaterViewModel.swift */,
 				303A85452AE6A9E300412588 /* Assets.xcassets */,
 				303A854A2AE6A9E300412588 /* mUpdater.entitlements */,
@@ -662,7 +662,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 84;
+				CURRENT_PROJECT_VERSION = 92;
 				DEVELOPMENT_ASSET_PATHS = "\"mUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -675,7 +675,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -693,7 +693,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 84;
+				CURRENT_PROJECT_VERSION = 92;
 				DEVELOPMENT_ASSET_PATHS = "\"mUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -706,7 +706,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yzhang.mUpdater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

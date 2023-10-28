@@ -11,7 +11,7 @@ import Foundation
 @main
 struct mUpdaterMenuBarApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
+    
     var body: some Scene {
         Settings { // Use Settings instead of WindowGroup
             Text("") // Placeholder, won't be shown
@@ -22,7 +22,7 @@ struct mUpdaterMenuBarApp: App {
 class AppDelegate: NSObject, NSApplicationDelegate {
     var statusBar: NSStatusBar!
     var statusBarItem: NSStatusItem!
-
+    
     func applicationDidFinishLaunching(_ notification: Notification) {
         // Set up the status bar item
         statusBar = NSStatusBar.system
@@ -37,15 +37,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         checkForUpdates()
         
         // Set up a timer to check for updates every 10 minutes
-        Timer.scheduledTimer(withTimeInterval: 600, repeats: true) { _ in
+        Timer.scheduledTimer(withTimeInterval: 100, repeats: true) { _ in
             self.checkForUpdates()
         }
     }
-
+    
     @objc func checkForUpdatesClicked() {
-        checkForUpdates()
+        NSWorkspace.shared.launchApplication("mUpdater")
     }
-
+    
     func getCurrentVersion() -> String? {
         let appPath = "/Applications/MCreator.app" as NSString
         let infoPlistPath = appPath.appendingPathComponent("Contents/Info.plist")
@@ -57,7 +57,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return nil
         }
     }
-
+    
     func getLatestVersion(completion: @escaping (String?) -> Void) {
         let url = URL(string: "https://api.github.com/repos/MCreator/MCreator/releases/latest")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -83,8 +83,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         task.resume()
     }
-
-
+    
+    
     func checkForUpdates() {
         guard let currentVersion = getCurrentVersion() else {
             DispatchQueue.main.async {
@@ -102,10 +102,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let currentVersionPrefix = String(currentVersion.prefix(6))
                 let latestVersionPrefix = String(latestVersion.prefix(6))
                 if latestVersionPrefix > currentVersionPrefix {
-                    // Open mUpdater app
-                    NSWorkspace.shared.launchApplication("mUpdater")
                     self.statusBarItem.button?.title = "􀁷"
                 } else {
+                    print("ok")
                     self.statusBarItem.button?.title = "􀁣"
                 }
             }

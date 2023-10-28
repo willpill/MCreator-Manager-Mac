@@ -10,90 +10,126 @@ import Foundation
 
 @main
 struct mUpdaterApp: App {
-    @State private var showHelpView = false
-    @StateObject var viewModel = UpdaterViewModel()
-    @State private var showUserFilesConfirmation = false
-    @State private var showGradleFilesConfirmation = false
-    @State private var showWorkspaceConfirmation = false
-    @State private var selectedTab: UpdateType = .release
+    @StateObject private var viewModel = UpdaterViewModel()
+    @State private var showHelpSheet = false
+    @State private var showAlertFor: UpdateAction? = nil
+    @State private var isAgentEnabled: Bool = UserDefaults.standard.bool(forKey: "isAgentEnabled")
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onAppear {
-                    if UserDefaults.standard.bool(forKey: "isAgentEnabled") {
-                        launchMenuBarAgent()
-                    }
-                }
-            
-                .sheet(isPresented: $showHelpView) {
+                .sheet(isPresented: $showHelpSheet) {
                     HelpView()
                 }
+                .onAppear(perform: checkForMenuBarAgent)
                 .environmentObject(viewModel)
                 .frame(width: 880, height: 580)
                 .fixedSize()
                 .toolbar {
-                    ToolbarItemGroup {
-                        
-                        Picker("Update Type", selection: $viewModel.selectedTab) {
-                            Text("􁙌 Latest Release").tag(UpdateType.release)
-                            Text("􁂶 Latest Snapshot").tag(UpdateType.snapshot)
-                        }
-                        
-                        Button(action: {
-                            showUserFilesConfirmation.toggle()
-                        }) {
-                            Text("􁣔 Reset User")
-                        }
-                        .alert(isPresented: $showUserFilesConfirmation) {
-                            Alert(title: Text("Reset User Files?"),
-                                  message: Text("This will remove all your plugins, backgrounds, templates, user preferences, logs, and the recents list. This action cannot be undone."),
-                                  primaryButton: .destructive(Text("Reset"), action: resetUserFiles),
-                                  secondaryButton: .cancel())
-                        }
-                        
-                        Button(action: {
-                            showGradleFilesConfirmation.toggle()
-                        }) {
-                            Text("􀻃 Reset Gradle")
-                        }
-                        .alert(isPresented: $showGradleFilesConfirmation) {
-                            Alert(title: Text("Reset Gradle Files?"),
-                                  message: Text("This will reset your Gradle folder. Setup for projects will take longer."),
-                                  primaryButton: .destructive(Text("Reset"), action: resetGradleFiles),
-                                  secondaryButton: .cancel())
-                        }
-                        
-                        Button(action: {
-                            showWorkspaceConfirmation.toggle()
-                        }) {
-                            Text("􁌅 Reset Workspaces")
-                        }
-                        .alert(isPresented: $showWorkspaceConfirmation) {
-                            Alert(title: Text("Are you sure about this?"),
-                                  message: Text("This will delete all of your workspaces. This action cannot be undone."),
-                                  primaryButton: .destructive(Text("Delete"), action: resetWorkspaces),
-                                  secondaryButton: .cancel())
-                        }
-                    }
+                    updateToolbar
                 }
         }
         .windowStyle(HiddenTitleBarWindowStyle())
         .windowResizability(.contentSize)
         .commands {
-            CommandGroup(replacing: .appInfo) {
-                Button("About mUpdater") {
-                    showHelpView.toggle()
-                }
+            aboutCommand
+            helpCommand
+        }
+    }
+    
+    
+    private var updateToolbar: some ToolbarContent {
+        ToolbarItemGroup {
+            Picker("Update Type", selection: $viewModel.selectedTab) {
+                Text("􁙌 Latest Release").tag(UpdateType.release)
+                Text("􁂶 Latest Snapshot").tag(UpdateType.snapshot)
             }
-            CommandGroup(replacing: .help) {
-                Button("View Guide") {
-                    showHelpView.toggle()
+            ForEach(UpdateAction.allCases, id: \.self) { action in
+                Button(action.label) {
+                    showAlertFor = action
+                }
+                .alert(item: $showAlertFor) { action in
+                    Alert(title: Text(action.alertTitle),
+                          message: Text(action.alertMessage),
+                          primaryButton: .destructive(Text(action.primaryButtonText), action: action.action),
+                          secondaryButton: .cancel())
                 }
             }
         }
     }
+    
+    private var aboutCommand: some Commands {
+        CommandGroup(replacing: .appInfo) {
+            Button("About & Settings") {
+                showHelpSheet.toggle()
+            }
+        }
+    }
+    
+    private var helpCommand: some Commands {
+        CommandGroup(replacing: .help) {
+            Button("View Guide") {
+                showHelpSheet.toggle()
+            }
+        }
+    }
+    
+    
+    private func checkForMenuBarAgent() {
+        if isAgentEnabled {
+            launchMenuBarAgent()
+        }
+    }
 }
+
+enum UpdateAction: CaseIterable, Identifiable {
+    case resetUser, resetGradle, resetWorkspace
+    
+    var id: Self { self }
+    
+    var label: String {
+        switch self {
+        case .resetUser: return "􁣔 Reset User"
+        case .resetGradle: return "􀻃 Reset Gradle"
+        case .resetWorkspace: return "􁌅 Reset Workspaces"
+        }
+    }
+    
+    var alertTitle: String {
+        switch self {
+        case .resetUser: return "Reset User Files?"
+        case .resetGradle: return "Reset Gradle Files?"
+        case .resetWorkspace: return "Are you sure about this?"
+        }
+    }
+    
+    var alertMessage: String {
+        switch self {
+        case .resetUser:
+            return "This will remove all your plugins, backgrounds, templates, user preferences, logs, and the recents list. This action cannot be undone."
+        case .resetGradle:
+            return "This will reset your Gradle folder. Setup for projects will take longer."
+        case .resetWorkspace:
+            return "This will delete all of your workspaces. This action cannot be undone."
+        }
+    }
+    
+    var primaryButtonText: String {
+        switch self {
+        case .resetUser, .resetWorkspace: return "Delete"
+        case .resetGradle: return "Reset"
+        }
+    }
+    
+    var action: () -> Void {
+        switch self {
+        case .resetUser: return resetUserFiles
+        case .resetGradle: return resetGradleFiles
+        case .resetWorkspace: return resetWorkspaces
+        }
+    }
+}
+
 
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
@@ -176,9 +212,6 @@ struct HelpView: View {
     }
 }
 
-
-
-
 enum UpdateType {
     case snapshot, release
 }
@@ -212,12 +245,10 @@ func deleteFiles(at paths: [String]) {
     let fileManager = FileManager.default
     for path in paths {
         let expandedPath = (path as NSString).expandingTildeInPath
-        if fileManager.fileExists(atPath: expandedPath) {
-            do {
-                try fileManager.removeItem(atPath: expandedPath)
-            } catch {
-                print("Cant delete \(path): \(error)")
-            }
+        do {
+            try fileManager.removeItem(atPath: expandedPath)
+        } catch {
+            print("Couldn't delete \(path): \(error)")
         }
     }
 }
