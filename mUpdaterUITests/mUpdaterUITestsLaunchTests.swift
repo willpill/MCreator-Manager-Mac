@@ -1,13 +1,13 @@
 //
-//  mNativeUpdaterUITestsLaunchTests.swift
-//  mNativeUpdaterUITests
+//  mUpdaterUITestsLaunchTests.swift
+//  mUpdaterUITests
 //
 //  Created by Yinwei Z on 10/23/23.
 //
 
 import XCTest
 
-final class mNativeUpdaterUITestsLaunchTests: XCTestCase {
+final class mUpdaterUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -1,14 +1,14 @@
 //
-//  mNativeUpdaterTests.swift
-//  mNativeUpdaterTests
+//  mUpdaterTests.swift
+//  mUpdaterTests
 //
 //  Created by Yinwei Z on 10/23/23.
 //
 
 import XCTest
-@testable import mNativeUpdater
+@testable import mUpdater
 
-final class mNativeUpdaterTests: XCTestCase {
+final class mUpdaterTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -1,6 +1,6 @@
 //
 //  UpdaterViewModel.swift
-//  mNativeUpdater
+//  mUpdater
 //
 //  Created by Yinwei Z on 10/26/23.
 //

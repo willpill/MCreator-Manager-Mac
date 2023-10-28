@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  mNativeUpdater
+//  mUpdater
 //
 //  Created by Yinwei Z on 10/22/23.
 //

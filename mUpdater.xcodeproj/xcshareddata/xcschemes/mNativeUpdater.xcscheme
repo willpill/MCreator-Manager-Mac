@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "303A853D2AE6A9E200412588"
-               BuildableName = "mNativeUpdater.app"
-               BlueprintName = "mNativeUpdater"
+               BuildableName = "mUpdater.app"
+               BlueprintName = "mUpdater"
                ReferencedContainer = "container:mUpdater.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,8 +35,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "303A854E2AE6A9E300412588"
-               BuildableName = "mNativeUpdaterTests.xctest"
-               BlueprintName = "mNativeUpdaterTests"
+               BuildableName = "mUpdaterTests.xctest"
+               BlueprintName = "mUpdaterTests"
                ReferencedContainer = "container:mUpdater.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -46,8 +46,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "303A85582AE6A9E300412588"
-               BuildableName = "mNativeUpdaterUITests.xctest"
-               BlueprintName = "mNativeUpdaterUITests"
+               BuildableName = "mUpdaterUITests.xctest"
+               BlueprintName = "mUpdaterUITests"
                ReferencedContainer = "container:mUpdater.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -68,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "303A853D2AE6A9E200412588"
-            BuildableName = "mNativeUpdater.app"
-            BlueprintName = "mNativeUpdater"
+            BuildableName = "mUpdater.app"
+            BlueprintName = "mUpdater"
             ReferencedContainer = "container:mUpdater.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "303A853D2AE6A9E200412588"
-            BuildableName = "mNativeUpdater.app"
-            BlueprintName = "mNativeUpdater"
+            BuildableName = "mUpdater.app"
+            BlueprintName = "mUpdater"
             ReferencedContainer = "container:mUpdater.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

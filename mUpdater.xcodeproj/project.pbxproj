@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		303A85422AE6A9E200412588 /* mNativeUpdaterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A85412AE6A9E200412588 /* mNativeUpdaterApp.swift */; };
+		303A85422AE6A9E200412588 /* mUpdaterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A85412AE6A9E200412588 /* mUpdaterApp.swift */; };
 		303A85442AE6A9E200412588 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A85432AE6A9E200412588 /* ContentView.swift */; };
 		303A85462AE6A9E300412588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303A85452AE6A9E300412588 /* Assets.xcassets */; };
 		303A85492AE6A9E300412588 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303A85482AE6A9E300412588 /* Preview Assets.xcassets */; };
-		303A85542AE6A9E300412588 /* mNativeUpdaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A85532AE6A9E300412588 /* mNativeUpdaterTests.swift */; };
-		303A855E2AE6A9E300412588 /* mNativeUpdaterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A855D2AE6A9E300412588 /* mNativeUpdaterUITests.swift */; };
-		303A85602AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A855F2AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift */; };
+		303A85542AE6A9E300412588 /* mUpdaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A85532AE6A9E300412588 /* mUpdaterTests.swift */; };
+		303A855E2AE6A9E300412588 /* mUpdaterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A855D2AE6A9E300412588 /* mUpdaterUITests.swift */; };
+		303A85602AE6A9E300412588 /* mUpdaterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A855F2AE6A9E300412588 /* mUpdaterUITestsLaunchTests.swift */; };
 		303A856D2AE6AA5700412588 /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A856C2AE6AA5700412588 /* BlurredView.swift */; };
 		305050792AEB3996009FD112 /* UpdaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305050782AEB3996009FD112 /* UpdaterViewModel.swift */; };
 		305BD49A2AE9CD4D00C79F8A /* UpdateScripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */; };
@@ -39,17 +39,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		303A853E2AE6A9E200412588 /* mNativeUpdater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mNativeUpdater.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		303A85412AE6A9E200412588 /* mNativeUpdaterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNativeUpdaterApp.swift; sourceTree = "<group>"; };
+		303A853E2AE6A9E200412588 /* mUpdater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mUpdater.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		303A85412AE6A9E200412588 /* mUpdaterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mUpdaterApp.swift; sourceTree = "<group>"; };
 		303A85432AE6A9E200412588 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		303A85452AE6A9E300412588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		303A85482AE6A9E300412588 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		303A854A2AE6A9E300412588 /* mNativeUpdater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mNativeUpdater.entitlements; sourceTree = "<group>"; };
-		303A854F2AE6A9E300412588 /* mNativeUpdaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mNativeUpdaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		303A85532AE6A9E300412588 /* mNativeUpdaterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNativeUpdaterTests.swift; sourceTree = "<group>"; };
-		303A85592AE6A9E300412588 /* mNativeUpdaterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mNativeUpdaterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		303A855D2AE6A9E300412588 /* mNativeUpdaterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNativeUpdaterUITests.swift; sourceTree = "<group>"; };
-		303A855F2AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mNativeUpdaterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		303A854A2AE6A9E300412588 /* mUpdater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mUpdater.entitlements; sourceTree = "<group>"; };
+		303A854F2AE6A9E300412588 /* mUpdaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mUpdaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		303A85532AE6A9E300412588 /* mUpdaterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mUpdaterTests.swift; sourceTree = "<group>"; };
+		303A85592AE6A9E300412588 /* mUpdaterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mUpdaterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		303A855D2AE6A9E300412588 /* mUpdaterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mUpdaterUITests.swift; sourceTree = "<group>"; };
+		303A855F2AE6A9E300412588 /* mUpdaterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mUpdaterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		303A856C2AE6AA5700412588 /* BlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
 		305050782AEB3996009FD112 /* UpdaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterViewModel.swift; sourceTree = "<group>"; };
 		305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateScripts.swift; sourceTree = "<group>"; };
@@ -85,9 +85,9 @@
 		303A85352AE6A9E200412588 = {
 			isa = PBXGroup;
 			children = (
-				303A85402AE6A9E200412588 /* mNativeUpdater */,
-				303A85522AE6A9E300412588 /* mNativeUpdaterTests */,
-				303A855C2AE6A9E300412588 /* mNativeUpdaterUITests */,
+				303A85402AE6A9E200412588 /* mUpdater */,
+				303A85522AE6A9E300412588 /* mUpdaterTests */,
+				303A855C2AE6A9E300412588 /* mUpdaterUITests */,
 				303A853F2AE6A9E200412588 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,17 +95,17 @@
 		303A853F2AE6A9E200412588 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				303A853E2AE6A9E200412588 /* mNativeUpdater.app */,
-				303A854F2AE6A9E300412588 /* mNativeUpdaterTests.xctest */,
-				303A85592AE6A9E300412588 /* mNativeUpdaterUITests.xctest */,
+				303A853E2AE6A9E200412588 /* mUpdater.app */,
+				303A854F2AE6A9E300412588 /* mUpdaterTests.xctest */,
+				303A85592AE6A9E300412588 /* mUpdaterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		303A85402AE6A9E200412588 /* mNativeUpdater */ = {
+		303A85402AE6A9E200412588 /* mUpdater */ = {
 			isa = PBXGroup;
 			children = (
-				303A85412AE6A9E200412588 /* mNativeUpdaterApp.swift */,
+				303A85412AE6A9E200412588 /* mUpdaterApp.swift */,
 				303A85432AE6A9E200412588 /* ContentView.swift */,
 				30CDB1762AE86F8B0059A4D9 /* ContentViewExtensions.swift */,
 				30CDB1782AE87C040059A4D9 /* NetworkCheck.swift */,
@@ -113,10 +113,10 @@
 				305BD4992AE9CD4D00C79F8A /* UpdateScripts.swift */,
 				305050782AEB3996009FD112 /* UpdaterViewModel.swift */,
 				303A85452AE6A9E300412588 /* Assets.xcassets */,
-				303A854A2AE6A9E300412588 /* mNativeUpdater.entitlements */,
+				303A854A2AE6A9E300412588 /* mUpdater.entitlements */,
 				303A85472AE6A9E300412588 /* Preview Content */,
 			);
-			path = mNativeUpdater;
+			path = mUpdater;
 			sourceTree = "<group>";
 		};
 		303A85472AE6A9E300412588 /* Preview Content */ = {
@@ -127,29 +127,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		303A85522AE6A9E300412588 /* mNativeUpdaterTests */ = {
+		303A85522AE6A9E300412588 /* mUpdaterTests */ = {
 			isa = PBXGroup;
 			children = (
-				303A85532AE6A9E300412588 /* mNativeUpdaterTests.swift */,
+				303A85532AE6A9E300412588 /* mUpdaterTests.swift */,
 			);
-			path = mNativeUpdaterTests;
+			path = mUpdaterTests;
 			sourceTree = "<group>";
 		};
-		303A855C2AE6A9E300412588 /* mNativeUpdaterUITests */ = {
+		303A855C2AE6A9E300412588 /* mUpdaterUITests */ = {
 			isa = PBXGroup;
 			children = (
-				303A855D2AE6A9E300412588 /* mNativeUpdaterUITests.swift */,
-				303A855F2AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift */,
+				303A855D2AE6A9E300412588 /* mUpdaterUITests.swift */,
+				303A855F2AE6A9E300412588 /* mUpdaterUITestsLaunchTests.swift */,
 			);
-			path = mNativeUpdaterUITests;
+			path = mUpdaterUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		303A853D2AE6A9E200412588 /* mNativeUpdater */ = {
+		303A853D2AE6A9E200412588 /* mUpdater */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 303A85632AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mNativeUpdater" */;
+			buildConfigurationList = 303A85632AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mUpdater" */;
 			buildPhases = (
 				303A853A2AE6A9E200412588 /* Sources */,
 				303A853B2AE6A9E200412588 /* Frameworks */,
@@ -159,14 +159,14 @@
 			);
 			dependencies = (
 			);
-			name = mNativeUpdater;
+			name = mUpdater;
 			productName = mNativeUpdater;
-			productReference = 303A853E2AE6A9E200412588 /* mNativeUpdater.app */;
+			productReference = 303A853E2AE6A9E200412588 /* mUpdater.app */;
 			productType = "com.apple.product-type.application";
 		};
-		303A854E2AE6A9E300412588 /* mNativeUpdaterTests */ = {
+		303A854E2AE6A9E300412588 /* mUpdaterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 303A85662AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mNativeUpdaterTests" */;
+			buildConfigurationList = 303A85662AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mUpdaterTests" */;
 			buildPhases = (
 				303A854B2AE6A9E300412588 /* Sources */,
 				303A854C2AE6A9E300412588 /* Frameworks */,
@@ -177,14 +177,14 @@
 			dependencies = (
 				303A85512AE6A9E300412588 /* PBXTargetDependency */,
 			);
-			name = mNativeUpdaterTests;
+			name = mUpdaterTests;
 			productName = mNativeUpdaterTests;
-			productReference = 303A854F2AE6A9E300412588 /* mNativeUpdaterTests.xctest */;
+			productReference = 303A854F2AE6A9E300412588 /* mUpdaterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		303A85582AE6A9E300412588 /* mNativeUpdaterUITests */ = {
+		303A85582AE6A9E300412588 /* mUpdaterUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 303A85692AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mNativeUpdaterUITests" */;
+			buildConfigurationList = 303A85692AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mUpdaterUITests" */;
 			buildPhases = (
 				303A85552AE6A9E300412588 /* Sources */,
 				303A85562AE6A9E300412588 /* Frameworks */,
@@ -195,9 +195,9 @@
 			dependencies = (
 				303A855B2AE6A9E300412588 /* PBXTargetDependency */,
 			);
-			name = mNativeUpdaterUITests;
+			name = mUpdaterUITests;
 			productName = mNativeUpdaterUITests;
-			productReference = 303A85592AE6A9E300412588 /* mNativeUpdaterUITests.xctest */;
+			productReference = 303A85592AE6A9E300412588 /* mUpdaterUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -236,9 +236,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				303A853D2AE6A9E200412588 /* mNativeUpdater */,
-				303A854E2AE6A9E300412588 /* mNativeUpdaterTests */,
-				303A85582AE6A9E300412588 /* mNativeUpdaterUITests */,
+				303A853D2AE6A9E200412588 /* mUpdater */,
+				303A854E2AE6A9E300412588 /* mUpdaterTests */,
+				303A85582AE6A9E300412588 /* mUpdaterUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -279,7 +279,7 @@
 				305BD49A2AE9CD4D00C79F8A /* UpdateScripts.swift in Sources */,
 				30CDB1792AE87C040059A4D9 /* NetworkCheck.swift in Sources */,
 				30CDB1772AE86F8B0059A4D9 /* ContentViewExtensions.swift in Sources */,
-				303A85422AE6A9E200412588 /* mNativeUpdaterApp.swift in Sources */,
+				303A85422AE6A9E200412588 /* mUpdaterApp.swift in Sources */,
 				303A856D2AE6AA5700412588 /* BlurredView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				303A85542AE6A9E300412588 /* mNativeUpdaterTests.swift in Sources */,
+				303A85542AE6A9E300412588 /* mUpdaterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,8 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				303A855E2AE6A9E300412588 /* mNativeUpdaterUITests.swift in Sources */,
-				303A85602AE6A9E300412588 /* mNativeUpdaterUITestsLaunchTests.swift in Sources */,
+				303A855E2AE6A9E300412588 /* mUpdaterUITests.swift in Sources */,
+				303A85602AE6A9E300412588 /* mUpdaterUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,12 +306,12 @@
 /* Begin PBXTargetDependency section */
 		303A85512AE6A9E300412588 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 303A853D2AE6A9E200412588 /* mNativeUpdater */;
+			target = 303A853D2AE6A9E200412588 /* mUpdater */;
 			targetProxy = 303A85502AE6A9E300412588 /* PBXContainerItemProxy */;
 		};
 		303A855B2AE6A9E300412588 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 303A853D2AE6A9E200412588 /* mNativeUpdater */;
+			target = 303A853D2AE6A9E200412588 /* mUpdater */;
 			targetProxy = 303A855A2AE6A9E300412588 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -440,12 +440,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = mNativeUpdater/mNativeUpdater.entitlements;
+				CODE_SIGN_ENTITLEMENTS = mUpdater/mUpdater.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 56;
-				DEVELOPMENT_ASSET_PATHS = "\"mNativeUpdater/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"mUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -471,12 +471,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = mNativeUpdater/mNativeUpdater.entitlements;
+				CODE_SIGN_ENTITLEMENTS = mUpdater/mUpdater.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 56;
-				DEVELOPMENT_ASSET_PATHS = "\"mNativeUpdater/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"mUpdater/Preview Content\"";
 				DEVELOPMENT_TEAM = AKMDV26QQ4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -581,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		303A85632AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mNativeUpdater" */ = {
+		303A85632AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mUpdater" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				303A85642AE6A9E300412588 /* Debug */,
@@ -590,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		303A85662AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mNativeUpdaterTests" */ = {
+		303A85662AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mUpdaterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				303A85672AE6A9E300412588 /* Debug */,
@@ -599,7 +599,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		303A85692AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mNativeUpdaterUITests" */ = {
+		303A85692AE6A9E300412588 /* Build configuration list for PBXNativeTarget "mUpdaterUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				303A856A2AE6A9E300412588 /* Debug */,

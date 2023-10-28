@@ -1,6 +1,6 @@
 //
-//  mNativeUpdaterApp.swift
-//  mNativeUpdater
+//  mUpdaterApp.swift
+//  mUpdater
 //
 //  Created by Yinwei Z on 10/22/23.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 @main
-struct mNativeUpdaterApp: App {
+struct mUpdaterApp: App {
     @State private var showHelpView = false
     @StateObject var viewModel = UpdaterViewModel()
     @State private var showUserFilesConfirmation = false

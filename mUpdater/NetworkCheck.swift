@@ -1,6 +1,6 @@
 //
 //  NetworkCheck.swift
-//  mNativeUpdater
+//  mUpdater
 //
 //  Created by Yinwei Z on 10/24/23.
 //

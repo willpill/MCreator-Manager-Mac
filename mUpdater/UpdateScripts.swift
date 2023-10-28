@@ -1,6 +1,6 @@
 //
 //  UpdateScripts.swift
-//  mNativeUpdater
+//  mUpdater
 //
 //  Created by Yinwei Z on 10/25/23.
 //
