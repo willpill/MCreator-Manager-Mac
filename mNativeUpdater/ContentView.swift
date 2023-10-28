@@ -21,16 +21,16 @@ struct ContentView: View {
         ZStack {
             BlurredView(material: .sidebar)
             VStack(alignment: .leading, spacing: 20) {
-                Spacer(minLength: 10)
+                Spacer(minLength: 15)
                 HStack {
                     Image("mctlogo")
                         .resizable()
                         .frame(width: 40, height: 40)
                     VStack (alignment: .leading){
-                        Text("MCreator Updater")
+                        Text("mUpdater")
                             .font(.title2)
                             .bold()
-                        Text("Version 1.5 by willpill. Not affiliated with Pylo.")
+                        Text("Made by willpill. Not affiliated with Pylo.")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
@@ -53,7 +53,7 @@ struct ContentView: View {
                 }
                 .background(
                     RoundedRectangle(cornerRadius: 5)
-                        .fill(Color(NSColor.systemGray).opacity(0.2))
+                        .fill(Color(NSColor.systemGray).opacity(0.25))
                 )
                 .overlay(
                     Group {
@@ -82,7 +82,7 @@ struct ContentView: View {
                     Button(action: {
                         startUpdateProcess()
                     }) {
-                        Text("􀄨 Start Update")
+                        Text("􀊕 Start Update")
                             .frame(maxWidth: .infinity)
                     }
                     .keyboardShortcut(.defaultAction)
